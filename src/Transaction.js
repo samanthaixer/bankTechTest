@@ -1,0 +1,9 @@
+function Transaction() {
+
+};
+
+// Transaction.prototype = {
+//
+//
+//
+// }
