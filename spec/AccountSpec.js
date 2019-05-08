@@ -47,18 +47,17 @@ describe("Account", function() {
       expect(this.account.transactionList).toContain(jasmine.objectContaining({amount: 200.00, type: "debit"}))
     })
 
-    // it("Takes a deposit for a date that isn't today", function(){
-    //   let date = new Date(2019, 3, 21)
-    //   this.account.deposit(500.00, date);
-    //   expect(this.account.printStatement()).toContain("21/04/2019")
-    // })
-    //
-    // it("Prints the correct running total for multiple deposits", function(){
-    //   this.account.deposit(500.00);
-    //   this.account.deposit(200.00);
-    //   expect(this.account.printStatement()).toContain("700.00")
-    // })
+    it("Takes a deposit for a date that isn't today", function(){
+      let date = new Date(2019, 3, 21)
+      this.account.withdraw(200.00, date);
+      expect(this.account.printStatement()).toContain("21/04/2019")
+    })
 
+    it("Prints the correct running total for multiple deposits", function(){
+      this.account.withdraw(100.00);
+      this.account.withdraw(50.00);
+      expect(this.account.printStatement()).toContain("350.00")
+    })
 
   });
 });

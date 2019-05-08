@@ -21,14 +21,23 @@ Account.prototype = {
   },
 
   printStatement: function() {
-    let statement = `date || credit || debit || balance\n`
+
+    fullStatement = `date || credit || debit || balance\n`
+    statement = this.calculateTotals();
+
+    return fullStatement += statement.reverse().join('\n');
+  },
+
+  calculateTotals: function(){
+    let statement = []
     let runningTotal = STARTING_BALANCE;
 
     this.transactionList.forEach(function(transaction){
       if(transaction.type === "credit") runningTotal += transaction.amount;
       if(transaction.type === "debit") runningTotal -= transaction.amount;
-      statement += `${transaction.print()} ${runningTotal.toFixed(2)} \n`
+      statement.push(`${transaction.print()} ${runningTotal.toFixed(2)}`)
     })
+
     return statement;
   }
 };

@@ -1,7 +1,5 @@
 describe("Transaction", function() {
   describe("Creating a credit transaction", function(){
-    // let date = new Date();
-    // var formattedDate = date.toLocaleDateString('en-GB');
 
     beforeAll(function() {
       this.date = new Date();
