@@ -80,4 +80,4 @@ These will be features that the user is likely to want to do. One has been provi
 
 - `Transaction` -  adding a credit transaction, adding a debit transaction, validation?, valid date, readable printing
 
-- `Account` - crediting or debitting the account updates the account balance, statement produces a list of transactions
+- `Account` - crediting or debiting the account updates the account balance, statement produces a list of transactions
