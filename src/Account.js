@@ -8,7 +8,12 @@ Account.prototype = {
 
   deposit: function(amount, transactionDate = new Date()){
     this.currentBalance += amount;
-    this.transactionList.push(new Transaction(amount, transactionDate));
+    this.transactionList.push(new Transaction(amount, transactionDate, "credit"));
+  },
+
+  withdraw: function(amount, transactionDate = new Date()){
+    this.currentBalance -= amount;
+    this.transactionList.push(new Transaction(amount, transactionDate, "debit"))
   },
 
   balance: function() {
@@ -20,10 +25,10 @@ Account.prototype = {
     let runningTotal = STARTING_BALANCE;
 
     this.transactionList.forEach(function(transaction){
-      runningTotal += transaction.amount;
+      if(transaction.type === "credit") runningTotal += transaction.amount;
+      if(transaction.type === "debit") runningTotal -= transaction.amount;
       statement += `${transaction.print()} ${runningTotal.toFixed(2)} \n`
-
     })
     return statement;
-  },
+  }
 };

@@ -1,9 +1,8 @@
 
-function Transaction(amount, date) {
+function Transaction(amount, date, type) {
  this.date = date;
  this.amount = amount;
- this.type = "";
- this.setType();
+ this.type = type;
 };
 
 Transaction.prototype = {
@@ -11,15 +10,7 @@ Transaction.prototype = {
     if (this.type === "credit") {
       return `${this.formatDate(this.date)} || ${this.amount.toFixed(2)} || ||`
     } else {
-      return `${this.formatDate(this.date)} || || ${this.amount.toFixed(2)}`
-    }
-  },
-
-  setType: function(){
-    if (this.amount >= 0) {
-      this.type = "credit";
-    } else {
-      this.type = "debit";
+      return `${this.formatDate(this.date)} || || ${this.amount.toFixed(2)} ||`
     }
   },
 
