@@ -4,11 +4,11 @@ describe("Account", function() {
       this.account = new Account();
     })
 
-    it("Should have an empty bank balance at the beginning", function(){
+    it("Has an empty bank balance at the beginning", function(){
       expect(this.account.balance()).toEqual(0.00);
     });
 
-    it("Should add the amount to the total of the transaction", function(){
+    it("Adds the amount to the total of the transaction", function(){
       this.account.deposit(500.00);
       expect(this.account.balance()).toEqual(500.00);
     });
@@ -18,13 +18,13 @@ describe("Account", function() {
       expect(this.account.transactionList).toContain(jasmine.objectContaining({amount: 200.00}))
     })
 
-    it("Should take deposits for various dates", function(){
+    it("Takes a deposit for a date that isn't today", function(){
       let date = new Date(2019, 3, 21)
       this.account.deposit(500.00, date);
       expect(this.account.printStatement()).toContain("21/04/2019")
     })
 
-    it("Prints the correct running total", function(){
+    it("Prints the correct running total for multiple deposits", function(){
       this.account.deposit(500.00);
       this.account.deposit(200.00);
       expect(this.account.printStatement()).toContain("700.00")

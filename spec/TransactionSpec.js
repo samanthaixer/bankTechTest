@@ -18,7 +18,7 @@ describe("Transaction", function() {
       expect(transaction).toEqual(jasmine.objectContaining({type: "credit"}))
     })
 
-    it("Sets it to credit if positive", function(){
+    it("Sets it to debit if negative", function(){
       let transaction = new Transaction(-500.00, this.date);
       expect(transaction).toEqual(jasmine.objectContaining({type: "debit"}))
     })
