@@ -11,15 +11,12 @@ On top of all of that, this is a chance to showcase my ability to build professi
 ## Using the project
 
 ### Setting up the project
-- `git clone `
-- `bundle install`
+- `git clone git@github.com:samanthaixer/bankTechTest.git`
 - `npm i -g eslint` and `eslint --init` to install the linter
 
 ### To run the Tests
 
-`open -a "Google Chrome" SpecRunner.html`
-
-or type `npm test`
+type `npm run coverage` to run the tests from the command line and also get coverage stats
 
 ### To run the linter (eslint)
 
@@ -96,3 +93,11 @@ The most important feature test is the one that has been provided as acceptance 
 - `Transaction` -  adding a credit transaction, adding a debit transaction, validation?, valid date, readable printing
 
 - `Account` - crediting or debiting the account updates the account balance, statement produces a list of transactions
+
+## My Approach
+
+- I started the project by breaking the specification into user stories and using that to model what the objects would be.
+- I used TDD to drive the design of the code. I am trying out a new level of TDD, skipping some basic steps as I get better at testing/coding. This seems to mean I have fewer commits as I don't commit until a feature test passes.
+- I refactored code with every green test. I looked to keep code and tests DRY and have tried to follow the single responsibility principle throughout.
+- Once I had built the main part of the code, I changed the tests to run through the command line and incorporated the code coverage tests.
+- Finally, I built dependency injection into the code so that I could mock transactions when testing the account at unit level. I have put the mock functions into helper files so that they could be reused. 
