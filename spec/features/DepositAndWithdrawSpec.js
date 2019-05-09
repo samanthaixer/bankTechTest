@@ -1,3 +1,6 @@
+var Account = require('../../src/Account');
+var Transaction = require('../../src/Transaction');
+
 describe("Feature - Account Withdrawals", function(){
   describe("Withdrawing funds from my account", function(){
     beforeEach(function() {

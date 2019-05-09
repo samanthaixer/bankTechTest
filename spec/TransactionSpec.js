@@ -1,3 +1,5 @@
+var Transaction = require('../src/Transaction');
+
 describe("Transaction", function() {
   describe("Creating a credit transaction", function(){
 
@@ -25,5 +27,6 @@ describe("Transaction", function() {
       let transaction = new Transaction(200.00, this.date, "credit");
       expect(transaction.print()).toEqual(`${this.formattedDate} || 200.00 || ||`)
     })
+
   })
 });

@@ -10,9 +10,20 @@ On top of all of that, this is a chance to showcase my ability to build professi
 
 ## Using the project
 
+### Setting up the project
+- `git clone `
+- `bundle install`
+- `npm i -g eslint` and `eslint --init` to install the linter
+
 ### To run the Tests
 
 `open -a "Google Chrome" SpecRunner.html`
+
+or type `npm test`
+
+### To run the linter (eslint)
+
+- To run the linter, type `eslint src/**`
 
 ## Specification
 
@@ -62,6 +73,7 @@ I want to be able to produce a statement of my account showing the date, an amou
 `Transaction` - type(credit or debit), amount, date, print
 
 ## Dependencies
+
 `Account` delegates the storing of each transaction to a `Transaction` object
 
 `Account` delegates responsibility for printing each individual line to the transaction
@@ -74,7 +86,10 @@ What do I want to test?
 
 ### Feature Tests
 
-These will be features that the user is likely to want to do. One has been provided as acceptance criteria.
+The most important feature test is the one that has been provided as acceptance criteria above. In addition to this, I have also added feature tests for:
+
+- Withdrawing multiple amounts and checking the running total
+- Depositing multiple amounts and checking the running total
 
 ### Unit Tests
 

@@ -1,0 +1,31 @@
+{
+  "name": "banktechtest",
+  "version": "1.0.0",
+  "description": "Bank Tech Test",
+  "main": "console",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jasmine",
+    "coverage": "nyc npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samanthaixer/bankTechTest.git"
+  },
+  "keywords": [
+    "JavaScript"
+  ],
+  "author": "Sam Ixer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samanthaixer/bankTechTest/issues"
+  },
+  "homepage": "https://github.com/samanthaixer/bankTechTest#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "jasmine": "^3.4.0",
+    "nyc": "^14.1.0"
+  }
+}

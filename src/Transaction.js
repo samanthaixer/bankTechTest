@@ -1,9 +1,8 @@
-
 function Transaction(amount, date, type) {
- this.date = date;
- this.amount = amount;
- this.type = type;
-};
+  this.date = date;
+  this.amount = amount;
+  this.type = type;
+}
 
 Transaction.prototype = {
   print: function(){
@@ -19,3 +18,5 @@ Transaction.prototype = {
   }
 
 }
+
+module.exports = Transaction;

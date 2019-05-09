@@ -1,3 +1,6 @@
+var Account = require('../src/Account');
+var Transaction = require('../src/Transaction');
+
 describe("Account", function() {
   describe("Adding funds through a deposit", function(){
     beforeEach(function() {

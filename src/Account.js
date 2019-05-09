@@ -1,5 +1,7 @@
+var Transaction = require('./Transaction');
+
 function Account() {
-  STARTING_BALANCE = 0.00;
+  const STARTING_BALANCE = 0.00;
   this.currentBalance = STARTING_BALANCE;
   this.transactionList = [];
 }
@@ -22,22 +24,23 @@ Account.prototype = {
 
   printStatement: function() {
 
-    fullStatement = `date || credit || debit || balance\n`
-    statement = this.calculateTotals();
-
+    var fullStatement = `date || credit || debit || balance\n`
+    var statement = this.calculateTotals();
     return fullStatement += statement.reverse().join('\n');
   },
 
   calculateTotals: function(){
-    let statement = []
-    let runningTotal = STARTING_BALANCE;
+    let statementLines = []
+    let runningTotal = 0;
 
     this.transactionList.forEach(function(transaction){
       if(transaction.type === "credit") runningTotal += transaction.amount;
       if(transaction.type === "debit") runningTotal -= transaction.amount;
-      statement.push(`${transaction.print()} ${runningTotal.toFixed(2)}`)
+      statementLines.push(`${transaction.print()} ${runningTotal.toFixed(2)}`)
     })
 
-    return statement;
+    return statementLines;
   }
 };
+
+module.exports = Account;
