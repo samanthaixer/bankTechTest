@@ -8,14 +8,14 @@ function Account() {
 
 Account.prototype = {
 
-  deposit: function(amount, transactionDate = new Date()){
+  deposit: function(amount, transactionDate = new Date(), transaction = new Transaction()){
     this.currentBalance += amount;
-    this.transactionList.push(new Transaction(amount, transactionDate, "credit"));
+    this.transactionList.push(transaction.create(amount, transactionDate, "credit"));
   },
 
-  withdraw: function(amount, transactionDate = new Date()){
+  withdraw: function(amount, transactionDate = new Date(), transaction = new Transaction()){
     this.currentBalance -= amount;
-    this.transactionList.push(new Transaction(amount, transactionDate, "debit"))
+    this.transactionList.push(transaction.create(amount, transactionDate, "debit"))
   },
 
   balance: function() {

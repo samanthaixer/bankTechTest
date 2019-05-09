@@ -2,21 +2,14 @@ var Account = require('../../src/Account');
 
 describe("Feature - Account Deposits", function(){
   describe("Adding a new deposit transaction to my account", function(){
+
     beforeEach(function() {
       this.account = new Account();
       this.date = new Date();
       this.formattedDate = this.date.toLocaleDateString('en-GB');
-
-      // var spyTransaction = jasmine.createSpyObject({
-      //   date = new Date();
-      //   amount = 500.00;
-      //   type = credit;}
-      // )
     })
 
     it("Creates a new transaction and adds to the balance", function(){
-      // spyOn(transaction, "create").and.returnValue(spyTransaction)
-
       this.account.deposit(500.00);
 
       expect(this.account.balance()).toEqual(500.00);

@@ -10,7 +10,7 @@ describe("Feature - Account Withdrawals", function(){
 
     it("Creates a new transaction and removes the amount from the balance", function(){
       this.account.deposit(500.00);
-      this.account.withdraw(200.00)
+      this.account.withdraw(200.00);
 
       expect(this.account.balance()).toEqual(300.00);
       let statement = this.account.printStatement();
